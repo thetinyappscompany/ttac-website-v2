@@ -546,7 +546,7 @@
   }
 
   /* ---------- Start ---------- */
-  fetch('/content.json', { cache:'no-cache' })
+  fetch('/api/content', { cache:'no-cache' })
     .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then((content) => {
       C = content;

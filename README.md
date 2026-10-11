@@ -7,7 +7,7 @@ All content and uploaded images live in this GitHub repository. Vercel (free Hob
 
 1. You edit in `/admin`. The preview shows your changes, including new images, before anything goes live.
 2. **Publish changes** makes one commit to GitHub with `public/content.json` and any images you added (in `public/uploads/`).
-3. Vercel sees the push and redeploys, usually within a minute. The site reads `/content.json`, so it shows the new content as soon as the deploy is live.
+3. The site reads its content and new images live from GitHub through `/api/content` and `/uploads/...`, with Vercel's edge keeping a copy for 30 seconds. Visitors see the change within a minute, without waiting for a redeploy.
 
 No database and no Vercel storage are used. Every change is in the git history, so you can see or undo any edit on GitHub.
 
@@ -19,7 +19,8 @@ No database and no Vercel storage are used. Every change is in the git history, 
 | `public/content.json` | All site content. The admin panel edits this file |
 | `public/admin.html`, `admin.css`, `admin.js` | The admin panel: edit, preview, publish |
 | `public/assets/` | TTAC logo, app icons, share image |
-| `api/content.js` | `GET`: latest content from GitHub (for the admin). `PUT`: publish (admin only) |
+| `api/content.js` | `GET`: the content, live from GitHub. `PUT`: publish (admin only) |
+| `api/image.js` | Serves images uploaded in /admin from GitHub until the next deploy includes them |
 | `api/login.js`, `api/upload.js` | Admin sign-in, and image uploads for icons and team photos |
 | `lib/github.js`, `lib/store.js` | GitHub commits, and the local fallback |
 | `dev-server.mjs` | Runs the site and the `api/` handlers on your PC |

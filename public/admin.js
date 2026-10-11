@@ -120,7 +120,7 @@
       saved = JSON.stringify(state);
       pendingUploads = [];
       toast(res.storage === 'github'
-        ? 'Published to GitHub. The live site updates when Vercel finishes deploying, usually within a minute.'
+        ? 'Published to GitHub. Visitors see the changes within a minute.'
         : 'Saved to public/content.json on this computer.');
     } catch (err) {
       if (err.message !== 'signed out') toast(err.message, true);

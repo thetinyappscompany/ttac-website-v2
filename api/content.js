@@ -20,15 +20,19 @@ function validate(c) {
   return null;
 }
 
-// The public site reads /content.json directly. This endpoint is for the admin panel:
-// GET returns the latest saved content (from GitHub, even before Vercel finishes deploying it).
-// PUT publishes: one commit with content.json and any images uploaded since the last publish.
+// GET: the site's content, read live from GitHub (or public/content.json locally).
+//   Visitors get a copy Vercel's edge keeps for 30 seconds; the admin panel asks with ?fresh=1.
+// PUT: publish. One commit with content.json and any images uploaded since the last publish.
+//   No redeploy is needed: the next GET reads the new commit.
 export default async function handler(req, res) {
   try {
     if (req.method === 'GET') {
+      const fresh = new URL(req.url, 'http://x').searchParams.has('fresh');
       return send(res, 200, await readContent(), {
-        'Cache-Control': 'no-store',
         'X-Storage': usingGitHub() ? 'github' : 'local',
+        ...(fresh
+          ? { 'Cache-Control': 'no-store' }
+          : { 'Cache-Control': 'no-cache', 'Vercel-CDN-Cache-Control': 'max-age=30, stale-while-revalidate=300' }),
       });
     }
     if (req.method === 'PUT') {
