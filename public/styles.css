@@ -70,6 +70,22 @@ img{display:block;max-width:100%}
   border:1px solid var(--hair); font-size:18px; transition:transform .2s var(--ease-out), background .2s;
 }
 .theme-btn:hover{background:var(--bg-2)}
+.top-actions{display:flex;align-items:center;gap:8px}
+.reach{
+  display:inline-flex;align-items:center;gap:7px;height:40px;padding:0 16px 0 13px;border-radius:999px;
+  font-weight:600;font-size:.88rem;text-decoration:none;border:1px solid var(--hair);background:var(--bg);
+  transition:transform .2s var(--ease-out), background .2s, box-shadow .2s;
+}
+.reach i{font-size:18px}
+.reach:hover{background:var(--bg-2)}
+.reach:active{transform:scale(.96)}
+.reach[hidden]{display:none}
+.reach.wa{background:#25D366;border-color:transparent;color:#0b2e17}
+.reach.wa:hover{background:#2fe072;box-shadow:0 6px 18px -8px rgba(37,211,102,.8)}
+@media (max-width: 560px){
+  .reach{width:40px;padding:0;justify-content:center}
+  .reach span{display:none}
+}
 .theme-btn:active{transform:scale(.94)}
 
 /* Hero */
@@ -365,7 +381,7 @@ h1 .line{display:block}
 .tiles div:first-child{grid-column:1 / -1;background:linear-gradient(150deg,#008080,#004e4e);color:#fff}
 .tiles b{display:block;font-size:1.45em;letter-spacing:-.03em}
 .tiles span{font-size:.72em;opacity:.75}
-.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:.5em;margin-top:1.2em}
+.actions{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:.5em;margin-top:1.2em}
 .actions a{
   display:flex;flex-direction:column;align-items:center;gap:.3em;padding:.75em 0;border-radius:1em;
   background:rgba(255,255,255,.16);text-decoration:none;font-size:.72em;font-weight:600;color:#fff;

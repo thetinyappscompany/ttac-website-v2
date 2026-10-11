@@ -507,9 +507,12 @@
   }
 
   function renderContact(root){
-    root.append(...head('Contact', 'The Contact screen in the dock. Its Mail, Call and Map buttons use these details.'),
+    root.append(...head('Contact', 'The Contact screen in the dock, and the WhatsApp and Call buttons at the top of the site.'),
       card('Details', 'address-book', [
-        { key:'email', label:'Email', inputType:'email' }, { key:'phone', label:'Phone', inputType:'tel' },
+        { key:'email', label:'Email', inputType:'email' },
+        { key:'phone', label:'Phone', inputType:'tel', help:'Used by the Call buttons.' },
+        { key:'whatsapp', label:'WhatsApp number', inputType:'tel', placeholder:'Same as the phone number', help:'Leave empty to use the phone number.' },
+        { key:'whatsappMessage', label:'WhatsApp opening message', placeholder:'e.g. Hi TTAC, I would like to know more about your apps.', help:'Typed into the chat for the visitor, ready to send.' },
         { key:'address', label:'Office address', full:true },
         { key:'mapUrl', label:'Map link', inputType:'url', full:true, help:'Paste the Share link from Google Maps.' },
         { key:'note', type:'textarea', label:'Note at the bottom', rows:2 },

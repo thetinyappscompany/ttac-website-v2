@@ -152,6 +152,7 @@
   function contactPage(){
     const c = C.contact || {};
     const tel = String(c.phone || '').replace(/[^\d+]/g, '');
+    const r = reach();
     const map = safeUrl(c.mapUrl);
     return `
     <article class="page" data-page="contact" style="${vars('#0f3d2a', '#008080')}" aria-label="Contact" hidden>
@@ -159,8 +160,9 @@
         ${back}
         <div class="v-head"><span class="icon t-about"><img src="/assets/ttac-icon.svg" alt=""></span><div><h2>Contact</h2><p class="k">${BASE_TITLE}</p></div></div>
         <div class="actions">
+          ${r.tel ? `<a href="${esc(r.tel)}"><i class="ph-fill ph-phone"></i>Call</a>` : ''}
+          ${r.wa ? `<a href="${esc(r.wa)}" target="_blank" rel="noopener"><i class="ph-fill ph-whatsapp-logo"></i>WhatsApp</a>` : ''}
           ${c.email ? `<a href="mailto:${esc(c.email)}"><i class="ph-fill ph-envelope-simple"></i>Mail</a>` : ''}
-          ${tel ? `<a href="tel:${esc(tel)}"><i class="ph-fill ph-phone"></i>Call</a>` : ''}
           ${map ? `<a href="${esc(map)}" target="_blank" rel="noopener"><i class="ph-fill ph-map-trifold"></i>Map</a>` : ''}
         </div>
       </header>
@@ -168,11 +170,34 @@
         <address class="list" style="font-style:normal">
           ${c.email ? `<div class="row"><span class="ri" aria-hidden="true"><i class="ph-fill ph-envelope-simple"></i></span><div><p>Email</p><h3><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></h3></div></div>` : ''}
           ${tel ? `<div class="row"><span class="ri" aria-hidden="true"><i class="ph-fill ph-phone"></i></span><div><p>Phone</p><h3><a href="tel:${esc(tel)}">${esc(c.phone)}</a></h3></div></div>` : ''}
+          ${r.wa ? `<div class="row"><span class="ri" aria-hidden="true" style="background:#25D366"><i class="ph-fill ph-whatsapp-logo"></i></span><div><p>WhatsApp</p><h3><a href="${esc(r.wa)}" target="_blank" rel="noopener">${esc(r.waLabel)}</a></h3></div></div>` : ''}
           ${c.address ? `<div class="row"><span class="ri" aria-hidden="true"><i class="ph-fill ph-buildings"></i></span><div><p>Office</p><h3>${esc(c.address)}</h3></div></div>` : ''}
         </address>
         ${c.note ? `<p class="note">${esc(c.note)}</p>` : ''}
       </div>
     </article>`;
+  }
+
+  // Call and WhatsApp links. WhatsApp uses its own number if set, else the phone number;
+  // a 10-digit number is treated as Indian (+91).
+  function reach(){
+    const c = C.contact || {};
+    const tel = String(c.phone || '').replace(/[^\d+]/g, '');
+    let wa = String(c.whatsapp || c.phone || '').replace(/\D/g, '');
+    if (wa.length === 10) wa = '91' + wa;
+    const msg = String(c.whatsappMessage || '').trim();
+    return {
+      tel: tel ? `tel:${tel}` : '',
+      wa: wa ? `https://wa.me/${wa}${msg ? `?text=${encodeURIComponent(msg)}` : ''}` : '',
+      waLabel: c.whatsapp || c.phone || '',
+    };
+  }
+
+  function renderReach(){
+    const r = reach();
+    const call = $('#callBtn'), wa = $('#waBtn');
+    call.hidden = !r.tel; if (r.tel) call.href = r.tel;
+    wa.hidden = !r.wa; if (r.wa) wa.href = r.wa;
   }
 
   /* ---------- Render everything from content ---------- */
@@ -184,6 +209,7 @@
     $('#badge').textContent = apps.length;
     $('#badge').setAttribute('aria-label', `${apps.length} apps`);
     $('#widgetLine').textContent = C.site?.widgetLine || '';
+    renderReach();
     if (!current) $('#hintText').textContent = C.site?.hint || 'Tap an app to look inside';
     setupTicker(C.site?.tickerWords);
 
