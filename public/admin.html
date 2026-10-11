@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Website admin</title>
+<link rel="icon" href="/assets/ttac-icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="stylesheet" href="/admin.css">
+<script src="/admin.js" defer></script>
+</head>
+<body>
+
+<!-- Sign in -->
+<section class="login" id="login" hidden>
+  <form class="login-card" id="loginForm">
+    <img src="/assets/ttac-icon.svg" alt="" width="48" height="48">
+    <h1>Website admin</h1>
+    <p class="muted">The Tiny Apps Company</p>
+    <label class="f-label" for="user">Admin ID</label>
+    <input class="input" id="user" type="text" autocomplete="username" autocapitalize="off" spellcheck="false" required>
+    <label class="f-label" for="pw" style="margin-top:12px;display:block">Password</label>
+    <input class="input" id="pw" type="password" autocomplete="current-password" required>
+    <p class="err" id="loginErr" role="alert"></p>
+    <button class="btn primary wide" type="submit" id="loginBtn">Sign in</button>
+  </form>
+</section>
+
+<!-- Editor -->
+<div class="shell" id="shell" hidden>
+  <header class="bar">
+    <a class="brand" href="/" target="_blank" rel="noopener">
+      <img src="/assets/ttac-icon.svg" alt="" width="28" height="28"><span>Website admin</span>
+    </a>
+    <p class="status" id="status" aria-live="polite">Loading</p>
+    <div class="bar-actions">
+      <button class="btn ghost" id="discardBtn" disabled>Discard changes</button>
+      <button class="btn primary" id="publishBtn" disabled><i class="ph ph-upload-simple"></i>Publish changes</button>
+      <a class="btn ghost icon-only" href="/" target="_blank" rel="noopener" aria-label="Open the live site"><i class="ph ph-arrow-square-out"></i></a>
+      <button class="btn ghost icon-only" id="signOut" aria-label="Sign out"><i class="ph ph-sign-out"></i></button>
+    </div>
+  </header>
+
+  <nav class="side" id="side" aria-label="Sections">
+    <button data-tab="apps" class="on"><i class="ph ph-squares-four"></i>Apps</button>
+    <button data-tab="about"><i class="ph ph-info"></i>About</button>
+    <button data-tab="team"><i class="ph ph-users-three"></i>Team</button>
+    <button data-tab="build"><i class="ph ph-compass-tool"></i>How we build</button>
+    <button data-tab="contact"><i class="ph ph-phone"></i>Contact</button>
+    <button data-tab="site"><i class="ph ph-sliders-horizontal"></i>Site settings</button>
+    <button data-tab="backup"><i class="ph ph-floppy-disk"></i>Backup</button>
+  </nav>
+
+  <main class="editor" id="editor"></main>
+
+  <aside class="preview" id="preview" aria-label="Live preview">
+    <div class="preview-head">
+      <span>Live preview <span class="muted">(unpublished changes included)</span></span>
+      <button class="btn ghost icon-only" id="bigPreview" aria-label="Enlarge preview"><i class="ph ph-arrows-out"></i></button>
+    </div>
+    <div class="preview-frame" id="previewFrame"><iframe id="previewIframe" src="/?preview=1" title="Website preview"></iframe></div>
+  </aside>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

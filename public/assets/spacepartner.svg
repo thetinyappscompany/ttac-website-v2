@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="SpacePartner">
+  <defs>
+    <linearGradient id="spdbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B2B2B"/><stop offset="1" stop-color="#1B1B1B"/></linearGradient>
+    <linearGradient id="spdg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#36BB8C"/><stop offset="1" stop-color="#13805F"/></linearGradient>
+    <linearGradient id="spdo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8784F"/><stop offset="1" stop-color="#C24620"/></linearGradient>
+    <radialGradient id="spda" cx="0.38" cy="0.32" r="0.75"><stop offset="0" stop-color="#F7BD55"/><stop offset="1" stop-color="#E48B16"/></radialGradient>
+    
+  </defs>
+  <rect width="1024" height="1024" fill="url(#spdbg)"/>
+  <rect x="166" y="166" width="692" height="692" rx="150" fill="none" stroke="#4A4A4A" stroke-width="6"/>
+  <rect x="527" y="527" width="237" height="237" rx="48" fill="none" stroke="#3A3A3A" stroke-width="3"/>
+  <g>
+    <rect x="260" y="260" width="237" height="504" rx="48" fill="url(#spdg)"/>
+    <rect x="527" y="260" width="237" height="237" rx="48" fill="url(#spdo)"/>
+    <circle cx="645" cy="645" r="78" fill="url(#spda)"/>
+  </g>
+  <rect x="260" y="260" width="237" height="122" rx="48" fill="#FFFFFF" opacity="0.10"/>
+  <rect x="527" y="260" width="237" height="92" rx="48" fill="#FFFFFF" opacity="0.10"/>
+  <ellipse cx="623" cy="617" rx="30" ry="22" fill="#FFFFFF" opacity="0.35"/>
+</svg>

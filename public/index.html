@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Tiny Apps Company</title>
+<meta name="description" content="A tiny name, deep apps. Niche software for Indian businesses: SpacePartner, ERPBlueprint, TraitAtlas, PressPilot and Gold Lending.">
+<link rel="canonical" href="https://thetinyappscompany.com/">
+<meta name="theme-color" content="#F5F1E9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0c0c" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Tiny Apps Company">
+<meta property="og:title" content="The Tiny Apps Company">
+<meta property="og:description" content="A tiny name, deep apps. Niche software for Indian businesses.">
+<meta property="og:url" content="https://thetinyappscompany.com/">
+<meta property="og:image" content="https://thetinyappscompany.com/assets/og.png">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="/assets/ttac-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Public+Sans:wght@300;400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="stylesheet" href="/styles.css">
+
+<script>try{var t=localStorage.getItem('ttac-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"The Tiny Apps Company",
+  "alternateName":"TTAC",
+  "url":"https://thetinyappscompany.com/",
+  "logo":"https://thetinyappscompany.com/assets/og.png",
+  "email":"Apps@thetinyappscompany.com",
+  "telephone":"+91-97375-66609",
+  "address":{"@type":"PostalAddress","streetAddress":"Kalp Business Center, Citylight","addressLocality":"Surat","addressRegion":"Gujarat","addressCountry":"IN"},
+  "founder":[{"@type":"Person","name":"Mayank Kariya"},{"@type":"Person","name":"Kushal Nahata"}]
+}
+</script>
+<script src="/app.js" defer></script>
+</head>
+<body>
+<main class="stage">
+  <div class="glow" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="brand" href="/" aria-label="The Tiny Apps Company, home">
+      <img src="/assets/ttac-icon.svg" alt="" width="34" height="34">
+      <span class="brand-name">The Tiny <b>Apps</b><br>Company</span>
+    </a>
+    <button class="theme-btn" id="themeBtn" aria-label="Switch colour theme"><i class="ph ph-circle-half"></i></button>
+  </header>
+
+  <section class="hero">
+    <h1>
+      <span class="sr-only" id="h1Text">A tiny name. Deep apps.</span>
+      <span class="line" aria-hidden="true">A <span class="tiny">tiny</span>name.</span>
+      <span class="line" aria-hidden="true"><span class="ticker" id="ticker"><span class="sizer">Deep</span><span class="w on">Deep</span></span> apps.</span>
+    </h1>
+    <p class="hint"><i class="ph ph-hand-tap"></i><span id="hintText">Tap an app to look inside</span><i class="ph ph-arrow-right arr"></i></p>
+  </section>
+
+  <section class="phone-col" id="phoneCol" aria-label="Our apps, shown on a phone">
+    <div class="phone-wrap" id="phoneWrap">
+      <div class="phone-zoom" id="phoneZoom">
+        <div class="phone" id="phone">
+          <span class="hw l1"></span><span class="hw l2"></span><span class="hw l3"></span><span class="hw r1"></span>
+          <span class="badge" id="badge" role="img" aria-label="Apps">5</span>
+          <div class="screen" id="screen">
+            <div class="island" id="island" aria-hidden="true"><span class="ii" id="islandIcon"></span><span class="it" id="islandText"></span></div>
+            <div class="status" aria-hidden="true">
+              <span id="clock">9:41</span>
+              <span class="r"><i class="ph-fill ph-cell-signal-full"></i><i class="ph-bold ph-wifi-high"></i><i class="ph-fill ph-battery-full"></i></span>
+            </div>
+
+            <div class="home" id="home">
+              <div class="widget" style="--i:0" aria-hidden="true">
+                <div><div class="day" id="wDay">Today</div><div class="num" id="wNum"></div></div>
+                <img src="/assets/ttac-icon.svg" alt="">
+                <p>The Tiny Apps Company<br><span id="widgetLine"></span></p>
+              </div>
+
+              <nav class="grid" id="grid" aria-label="Apps"></nav>
+
+              <div class="dots" aria-hidden="true"><i></i><i></i></div>
+
+              <nav class="dock" style="--i:6" aria-label="Company">
+                <a class="app" href="#about" data-route="about">
+                  <span class="icon t-about"><img src="/assets/ttac-icon.svg" alt=""></span><span class="label">About</span>
+                </a>
+                <a class="app" href="#team" data-route="team">
+                  <span class="icon t-team"><span class="gl"><i class="ph-fill ph-users-three"></i></span></span><span class="label">Team</span>
+                </a>
+                <a class="app" href="#how-we-build" data-route="how-we-build">
+                  <span class="icon t-build"><span class="gl"><i class="ph-fill ph-compass-tool"></i></span></span><span class="label">How we build</span>
+                </a>
+                <a class="app" href="#contact" data-route="contact">
+                  <span class="icon t-contact"><span class="gl"><i class="ph-fill ph-phone"></i></span></span><span class="label">Contact</span>
+                </a>
+              </nav>
+            </div>
+
+            <div class="view" id="view" hidden></div>
+            <button class="home-bar" id="homeBar" aria-label="Back to home screen"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="video-scrim" id="videoScrim" aria-hidden="true"></div>
+  <button class="video-close" id="videoClose" aria-label="Close video"><i class="ph-bold ph-x"></i></button>
+</main>
+<noscript><p style="padding:16px;font-family:system-ui">This site needs JavaScript to show our apps. Write to Apps@thetinyappscompany.com.</p></noscript>
+</body>
+</html>
