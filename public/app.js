@@ -493,7 +493,7 @@
 
   /* ---------- Gentle tilt toward the pointer (mouse and trackpad only) ---------- */
   let tiltOff = false;
-  if (!reduce && matchMedia('(pointer: fine)').matches){
+  if (!reduce && matchMedia('(pointer: fine)').matches && !document.documentElement.classList.contains('phone-only')){
     const col = $('#phoneCol'), wrap = $('#phoneWrap');
     let raf = 0;
     col.addEventListener('pointermove', (e) => {

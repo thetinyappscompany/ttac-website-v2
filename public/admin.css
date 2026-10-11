@@ -50,7 +50,7 @@ select.input{appearance:auto}
 .err{color:var(--danger);font-size:13px;min-height:20px;margin:6px 0}
 
 /* Shell */
-.shell{height:100dvh;display:grid;grid-template-columns:200px minmax(0,1fr) 460px;grid-template-rows:60px minmax(0,1fr)}
+.shell{height:100dvh;display:grid;grid-template-columns:200px minmax(0,1fr) clamp(300px,26vw,420px);grid-template-rows:60px minmax(0,1fr)}
 .bar{grid-column:1 / -1;display:flex;align-items:center;gap:16px;padding:0 16px;background:var(--panel);border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;letter-spacing:-.01em}
 .status{flex:1;color:var(--muted);font-size:13px}
@@ -68,10 +68,9 @@ select.input{appearance:auto}
 
 /* Preview */
 .preview{border-left:1px solid var(--line);display:flex;flex-direction:column;min-height:0;background:var(--panel-2)}
-.preview-head{display:flex;align-items:center;justify-content:space-between;padding:10px 12px 10px 16px;font-weight:600;font-size:13px}
+.preview-head{padding:14px 16px 6px;font-weight:600;font-size:13px}
 .preview-frame{flex:1;position:relative;overflow:hidden;min-height:0}
-.preview-frame iframe{position:absolute;left:0;top:0;width:1280px;height:820px;border:0;transform-origin:0 0;background:var(--bg)}
-.preview.big{position:fixed;inset:24px;z-index:20;border:1px solid var(--line-2);border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.3)}
+.preview-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent}
 
 /* Cards and fields */
 .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 18px 20px;margin-top:14px}
@@ -145,9 +144,18 @@ select.input{appearance:auto}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .toast.bad{background:var(--danger)}
 
-@media (max-width: 1280px){
-  .shell{grid-template-columns:190px minmax(0,1fr)}
-  .preview{position:fixed;right:16px;bottom:16px;width:380px;height:280px;border:1px solid var(--line-2);border-radius:14px;overflow:hidden;z-index:10;box-shadow:0 20px 50px rgba(0,0,0,.2)}
+/* the editor column gets narrow next to the preview: stack the app list above the app form */
+.editor{container-type:inline-size}
+@container (max-width: 760px){
+  .apps-layout{grid-template-columns:1fr}
+  .app-list{position:static;flex-direction:row;flex-wrap:wrap}
+  .app-pick{width:auto}
+}
+@container (max-width: 560px){
+  .fields{grid-template-columns:1fr}
+}
+@media (max-width: 1100px){
+  .shell{grid-template-columns:170px minmax(0,1fr) 300px}
 }
 @media (max-width: 860px){
   .shell{grid-template-columns:1fr;grid-template-rows:auto auto minmax(0,1fr)}

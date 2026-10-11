@@ -163,23 +163,6 @@
     localImages.forEach((local, url) => { json = json.split(JSON.stringify(url)).join(JSON.stringify(local)); });
     iframe.contentWindow.postMessage({ type:'ttac:content', content: JSON.parse(json), route: previewRoute() }, location.origin);
   }
-  function scalePreview(){
-    // the side panel shows only the phone half of a 1280 × 820 page; the enlarged view shows all of it
-    const box = $('#previewFrame');
-    const big = $('#preview').classList.contains('big');
-    const cropX = big ? 0 : 670, cropW = 1280 - cropX;
-    const s = Math.min(box.clientWidth / cropW, box.clientHeight / 820);
-    iframe.style.transform = `scale(${s})`;
-    iframe.style.left = `${(box.clientWidth - cropW * s) / 2 - cropX * s}px`;
-    iframe.style.top = `${Math.max(0, (box.clientHeight - 820 * s) / 2)}px`;
-  }
-  new ResizeObserver(scalePreview).observe($('#previewFrame'));
-  $('#bigPreview').addEventListener('click', () => {
-    const p = $('#preview');
-    p.classList.toggle('big');
-    $('#bigPreview').innerHTML = '';
-    $('#bigPreview').append(icon(p.classList.contains('big') ? 'arrows-in' : 'arrows-out'));
-  });
 
   /* ---------- Field builders ---------- */
   // Each builder gets the object and key it edits, and calls changed() after every edit.
@@ -600,7 +583,7 @@
     // older content files may miss newer fields
     state.site ??= {}; state.about ??= {}; state.team ??= { members:[] }; state.build ??= { rules:[] }; state.contact ??= {};
     saved = JSON.stringify(state);
-    renderTab(); refreshStatus(); scalePreview(); hello();
+    renderTab(); refreshStatus(); hello();
   }
 
   if (token()) start().catch((err) => showLogin(err.message));

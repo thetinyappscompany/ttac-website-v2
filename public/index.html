@@ -28,7 +28,7 @@
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
 <link rel="stylesheet" href="/styles.css">
 
-<script>try{var t=localStorage.getItem('ttac-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script>try{var t=localStorage.getItem('ttac-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}if(/[?&]phone=1/.test(location.search))document.documentElement.classList.add('phone-only')</script>
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
