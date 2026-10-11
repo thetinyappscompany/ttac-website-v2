@@ -1,6 +1,12 @@
 {
   "site": {
-    "tickerWords": ["Deep", "Big", "Niche", "Loaded", "Serious"],
+    "tickerWords": [
+      "Deep",
+      "Big",
+      "Niche",
+      "Loaded",
+      "Serious"
+    ],
     "hint": "Tap an app to look inside",
     "widgetLine": "Tap any app to look inside.",
     "videoZoom": true
@@ -16,27 +22,86 @@
       "glyph": "",
       "colorFrom": "#1d2924",
       "colorTo": "#13805F",
-      "platforms": ["Android", "iOS soon", "Staff web app"],
+      "platforms": [
+        "Android",
+        "iOS soon",
+        "Staff web app"
+      ],
       "facts": [
-        { "label": "Built for", "value": "Coworking" },
-        { "label": "Locations", "value": "1 to 50+" },
-        { "label": "Platforms", "value": "App + Web" },
-        { "label": "Pricing", "value": "Custom quote" }
+        {
+          "label": "Built for",
+          "value": "Coworking"
+        },
+        {
+          "label": "Locations",
+          "value": "1 to 50+"
+        },
+        {
+          "label": "Platforms",
+          "value": "App + Web"
+        },
+        {
+          "label": "Pricing",
+          "value": "Custom quote"
+        }
       ],
       "highlights": [
-        { "icon": "users-three", "title": "One app, every role", "text": "Members, company admins and seven staff consoles, from reception to billing." },
-        { "icon": "lock-key", "title": "Private by design", "text": "Each operator gets its own instance. No shared database." },
-        { "icon": "buildings", "title": "Grows with you", "text": "Run one centre or fifty from the same system." }
+        {
+          "icon": "users-three",
+          "title": "One app, every role",
+          "text": "Members, company admins and seven staff consoles, from reception to billing."
+        },
+        {
+          "icon": "lock-key",
+          "title": "Private by design",
+          "text": "Each operator gets its own instance. No shared database."
+        },
+        {
+          "icon": "buildings",
+          "title": "Grows with you",
+          "text": "Run one centre or fifty from the same system."
+        }
       ],
       "groups": [
-        { "title": "For members", "items": ["Member mobile app", "Company admin access", "Credits and billing", "Community", "Support requests"] },
-        { "title": "For staff", "items": ["Reception console", "Workspace ops", "Sales", "Onboarding", "Billing", "Renewals and exits"] },
-        { "title": "Under the hood", "items": ["One private instance per operator", "1 to 50+ locations", "Your brand, not ours", "Hosted on Frappe Cloud"] }
+        {
+          "title": "For members",
+          "items": [
+            "Member mobile app",
+            "Company admin access",
+            "Credits and billing",
+            "Community",
+            "Support requests"
+          ]
+        },
+        {
+          "title": "For staff",
+          "items": [
+            "Reception console",
+            "Workspace ops",
+            "Sales",
+            "Onboarding",
+            "Billing",
+            "Renewals and exits"
+          ]
+        },
+        {
+          "title": "Under the hood",
+          "items": [
+            "One private instance per operator",
+            "1 to 50+ locations",
+            "Your brand, not ours",
+            "Hosted on Frappe Cloud"
+          ]
+        }
       ],
       "stack": "Frappe, Flutter",
       "websiteUrl": "https://spacepartner.io",
       "websiteLabel": "spacepartner.io",
-      "video": { "url": "", "orientation": "auto", "title": "" },
+      "video": {
+        "url": "",
+        "orientation": "auto",
+        "title": ""
+      },
       "hidden": false
     },
     {
@@ -49,27 +114,80 @@
       "glyph": "",
       "colorFrom": "#0a2559",
       "colorTo": "#1a8cff",
-      "platforms": ["Web"],
+      "platforms": [
+        "Web"
+      ],
       "facts": [
-        { "label": "Built for", "value": "Small business" },
-        { "label": "You get", "value": "A full BRD" },
-        { "label": "Covers", "value": "ERPNext + HRMS" },
-        { "label": "Built on", "value": "Frappe v16" }
+        {
+          "label": "Built for",
+          "value": "Small business"
+        },
+        {
+          "label": "You get",
+          "value": "A full BRD"
+        },
+        {
+          "label": "Covers",
+          "value": "ERPNext + HRMS"
+        },
+        {
+          "label": "Built on",
+          "value": "Frappe v16"
+        }
       ],
       "highlights": [
-        { "icon": "chat-text", "title": "Plain English in", "text": "Answer questions about how your business runs. No ERP jargon." },
-        { "icon": "file-text", "title": "A real BRD out", "text": "Chapter by chapter: what is standard, what needs settings, what needs building." },
-        { "icon": "shield-check", "title": "AI with a fence", "text": "A rule engine decides. AI only helps with the wording." }
+        {
+          "icon": "chat-text",
+          "title": "Plain English in",
+          "text": "Answer questions about how your business runs. No ERP jargon."
+        },
+        {
+          "icon": "file-text",
+          "title": "A real BRD out",
+          "text": "Chapter by chapter: what is standard, what needs settings, what needs building."
+        },
+        {
+          "icon": "shield-check",
+          "title": "AI with a fence",
+          "text": "A rule engine decides. AI only helps with the wording."
+        }
       ],
       "groups": [
-        { "title": "Discovery", "items": ["Plain-English questions", "Made for Indian small businesses"] },
-        { "title": "Your BRD", "items": ["Chapter-by-chapter setup plan", "What is standard", "What needs settings", "What needs building", "ERPNext, HRMS and India Compliance", "PDF and Word downloads"] },
-        { "title": "Under the hood", "items": ["Rule engine with an AI fence", "Razorpay payments", "Built on Frappe v16"] }
+        {
+          "title": "Discovery",
+          "items": [
+            "Plain-English questions",
+            "Made for Indian small businesses"
+          ]
+        },
+        {
+          "title": "Your BRD",
+          "items": [
+            "Chapter-by-chapter setup plan",
+            "What is standard",
+            "What needs settings",
+            "What needs building",
+            "ERPNext, HRMS and India Compliance",
+            "PDF and Word downloads"
+          ]
+        },
+        {
+          "title": "Under the hood",
+          "items": [
+            "Rule engine with an AI fence",
+            "Razorpay payments",
+            "Built on Frappe v16"
+          ]
+        }
       ],
       "stack": "Frappe v16, React, Tailwind",
       "websiteUrl": "https://erpblueprint.io",
       "websiteLabel": "erpblueprint.io",
-      "video": { "url": "", "orientation": "auto", "title": "" },
+      "video": {
+        "url": "",
+        "orientation": "auto",
+        "title": ""
+      },
       "hidden": false
     },
     {
@@ -82,27 +200,83 @@
       "glyph": "",
       "colorFrom": "#13112e",
       "colorTo": "#3b2f86",
-      "platforms": ["Web app", "Installable PWA"],
+      "platforms": [
+        "Web app",
+        "Installable PWA"
+      ],
       "facts": [
-        { "label": "Tests", "value": "8" },
-        { "label": "Time", "value": "4 to 12 min" },
-        { "label": "Price", "value": "₹99 a report" },
-        { "label": "Languages", "value": "EN + Hinglish" }
+        {
+          "label": "Tests",
+          "value": "8"
+        },
+        {
+          "label": "Time",
+          "value": "4 to 12 min"
+        },
+        {
+          "label": "Price",
+          "value": "₹99 a report"
+        },
+        {
+          "label": "Languages",
+          "value": "EN + Hinglish"
+        }
       ],
       "highlights": [
-        { "icon": "flask", "title": "Research, not horoscopes", "text": "Built on published instruments, with scoring you can explain." },
-        { "icon": "user-circle", "title": "Characters you know", "text": "Results come as characters from everyday Indian life." },
-        { "icon": "whatsapp-logo", "title": "Made to share", "text": "A 9:16 card for WhatsApp, and compare-with-a-friend." }
+        {
+          "icon": "flask",
+          "title": "Research, not horoscopes",
+          "text": "Built on published instruments, with scoring you can explain."
+        },
+        {
+          "icon": "user-circle",
+          "title": "Characters you know",
+          "text": "Results come as characters from everyday Indian life."
+        },
+        {
+          "icon": "whatsapp-logo",
+          "title": "Made to share",
+          "text": "A 9:16 card for WhatsApp, and compare-with-a-friend."
+        }
       ],
       "groups": [
-        { "title": "The tests", "items": ["8 tests, 4 to 12 minutes each", "Published research instruments", "Explainable, versioned scoring", "English and Hinglish"] },
-        { "title": "The reports", "items": ["Characters like The Monsoon Express", "AI Atlas Profile across reports", "AI never changes a score", "PDF report", "₹99 per report, no subscription"] },
-        { "title": "Share and teams", "items": ["9:16 WhatsApp share card", "Compare with a friend", "Team rounds with consent", "Team insights, small groups hidden"] }
+        {
+          "title": "The tests",
+          "items": [
+            "8 tests, 4 to 12 minutes each",
+            "Published research instruments",
+            "Explainable, versioned scoring",
+            "English and Hinglish"
+          ]
+        },
+        {
+          "title": "The reports",
+          "items": [
+            "Characters like The Monsoon Express",
+            "AI Atlas Profile across reports",
+            "AI never changes a score",
+            "PDF report",
+            "₹99 per report, no subscription"
+          ]
+        },
+        {
+          "title": "Share and teams",
+          "items": [
+            "9:16 WhatsApp share card",
+            "Compare with a friend",
+            "Team rounds with consent",
+            "Team insights, small groups hidden"
+          ]
+        }
       ],
       "stack": "Frappe v16, React, Vite, Tailwind",
       "websiteUrl": "",
       "websiteLabel": "",
-      "video": { "url": "", "orientation": "auto", "title": "" },
+      "video": {
+        "url": "",
+        "orientation": "auto",
+        "title": ""
+      },
       "hidden": false
     },
     {
@@ -115,27 +289,81 @@
       "glyph": "",
       "colorFrom": "#0c1c3f",
       "colorTo": "#2a6fdc",
-      "platforms": ["Android"],
+      "platforms": [
+        "Android"
+      ],
       "facts": [
-        { "label": "Works with", "value": "Frappe Cloud" },
-        { "label": "Platform", "value": "Android" },
-        { "label": "Sign-in", "value": "2FA ready" },
-        { "label": "Self-hosted", "value": "Supported" }
+        {
+          "label": "Works with",
+          "value": "Frappe Cloud"
+        },
+        {
+          "label": "Platform",
+          "value": "Android"
+        },
+        {
+          "label": "Sign-in",
+          "value": "2FA ready"
+        },
+        {
+          "label": "Self-hosted",
+          "value": "Supported"
+        }
       ],
       "highlights": [
-        { "icon": "rocket-launch", "title": "Deploys on the go", "text": "Sites, benches and deploys, from your pocket." },
-        { "icon": "bell-ringing", "title": "Know first", "text": "Notifications from your Frappe Cloud account." },
-        { "icon": "key", "title": "Password used once", "text": "Swapped for a token in secure storage, then forgotten." }
+        {
+          "icon": "rocket-launch",
+          "title": "Deploys on the go",
+          "text": "Sites, benches and deploys, from your pocket."
+        },
+        {
+          "icon": "bell-ringing",
+          "title": "Know first",
+          "text": "Notifications from your Frappe Cloud account."
+        },
+        {
+          "icon": "key",
+          "title": "Password used once",
+          "text": "Swapped for a token in secure storage, then forgotten."
+        }
       ],
       "groups": [
-        { "title": "Manage", "items": ["Sites", "Benches", "Deploys", "Notifications", "Switch teams"] },
-        { "title": "Sign in your way", "items": ["Email and password", "Two-factor codes", "API key sign-in", "Self-hosted Press servers"] },
-        { "title": "Security", "items": ["Password used once, then forgotten", "Token kept in secure storage", "HTTPS required"] }
+        {
+          "title": "Manage",
+          "items": [
+            "Sites",
+            "Benches",
+            "Deploys",
+            "Notifications",
+            "Switch teams"
+          ]
+        },
+        {
+          "title": "Sign in your way",
+          "items": [
+            "Email and password",
+            "Two-factor codes",
+            "API key sign-in",
+            "Self-hosted Press servers"
+          ]
+        },
+        {
+          "title": "Security",
+          "items": [
+            "Password used once, then forgotten",
+            "Token kept in secure storage",
+            "HTTPS required"
+          ]
+        }
       ],
       "stack": "Flutter, Riverpod, Firebase",
       "websiteUrl": "https://presspilot.thetinyappscompany.com",
       "websiteLabel": "website",
-      "video": { "url": "", "orientation": "auto", "title": "" },
+      "video": {
+        "url": "",
+        "orientation": "auto",
+        "title": ""
+      },
       "hidden": false
     },
     {
@@ -148,27 +376,83 @@
       "glyph": "coins",
       "colorFrom": "#2a1d02",
       "colorTo": "#b8860b",
-      "platforms": ["Borrower app", "ERPNext back office"],
+      "platforms": [
+        "Borrower app",
+        "ERPNext back office"
+      ],
       "facts": [
-        { "label": "Built for", "value": "NBFCs" },
-        { "label": "Rulebook", "value": "RBI 2025" },
-        { "label": "Gold release", "value": "7-day SLA" },
-        { "label": "eKYC", "value": "Digio" }
+        {
+          "label": "Built for",
+          "value": "NBFCs"
+        },
+        {
+          "label": "Rulebook",
+          "value": "RBI 2025"
+        },
+        {
+          "label": "Gold release",
+          "value": "7-day SLA"
+        },
+        {
+          "label": "eKYC",
+          "value": "Digio"
+        }
       ],
       "highlights": [
-        { "icon": "scales", "title": "Compliance as settings", "text": "RBI gold, digital lending and KYC directions, built in." },
-        { "icon": "vault", "title": "Gold, tracked end to end", "text": "Appraisal, assay, vault custody, release and auctions." },
-        { "icon": "sliders", "title": "Configure, don't code", "text": "A new NBFC goes live by changing settings." }
+        {
+          "icon": "scales",
+          "title": "Compliance as settings",
+          "text": "RBI gold, digital lending and KYC directions, built in."
+        },
+        {
+          "icon": "vault",
+          "title": "Gold, tracked end to end",
+          "text": "Appraisal, assay, vault custody, release and auctions."
+        },
+        {
+          "icon": "sliders",
+          "title": "Configure, don't code",
+          "text": "A new NBFC goes live by changing settings."
+        }
       ],
       "groups": [
-        { "title": "Lending", "items": ["Tiered LTV engine", "Appraisal and assay certificates", "Vault custody", "KFS and APR with charge freeze", "Cooling-off period"] },
-        { "title": "Compliance", "items": ["7-working-day gold release SLA", "Auto-compensation on delays", "Regulated auctions", "Grievance SLA", "Digio eKYC and eSign"] },
-        { "title": "Under the hood", "items": ["Configure per NBFC, no code changes", "Whitelisted borrower API", "ERPNext v16 and Frappe Lending"] }
+        {
+          "title": "Lending",
+          "items": [
+            "Tiered LTV engine",
+            "Appraisal and assay certificates",
+            "Vault custody",
+            "KFS and APR with charge freeze",
+            "Cooling-off period"
+          ]
+        },
+        {
+          "title": "Compliance",
+          "items": [
+            "7-working-day gold release SLA",
+            "Auto-compensation on delays",
+            "Regulated auctions",
+            "Grievance SLA",
+            "Digio eKYC and eSign"
+          ]
+        },
+        {
+          "title": "Under the hood",
+          "items": [
+            "Configure per NBFC, no code changes",
+            "Whitelisted borrower API",
+            "ERPNext v16 and Frappe Lending"
+          ]
+        }
       ],
       "stack": "ERPNext v16, Frappe Lending, Flutter",
       "websiteUrl": "",
       "websiteLabel": "",
-      "video": { "url": "", "orientation": "auto", "title": "" },
+      "video": {
+        "url": "",
+        "orientation": "auto",
+        "title": ""
+      },
       "hidden": false
     }
   ],
@@ -180,29 +464,76 @@
       "Each product is small enough to fit one icon, and deep enough that the people using it every day stop needing a second tool."
     ],
     "tiles": [
-      { "value": "5 products", "label": "and counting" },
-      { "value": "Frappe", "label": "and ERPNext underneath" },
-      { "value": "Flutter", "label": "for every mobile app" }
+      {
+        "value": "5 products",
+        "label": "and counting"
+      },
+      {
+        "value": "Frappe",
+        "label": "and ERPNext underneath"
+      },
+      {
+        "value": "Flutter",
+        "label": "for every mobile app"
+      }
     ],
-    "video": { "url": "", "orientation": "auto", "title": "" }
+    "video": {
+      "url": "",
+      "orientation": "auto",
+      "title": ""
+    }
   },
   "team": {
     "subtitle": "Small on purpose",
     "headline": "A tiny team, with a lot of help from machines.",
     "members": [
-      { "name": "Mayank Kariya", "role": "Founder", "bio": "", "photo": "", "icon": "" },
-      { "name": "Kushal Nahata", "role": "Co-founder", "bio": "", "photo": "", "icon": "" },
-      { "name": "The AI team", "role": "Always on", "bio": "Agents that draft specs, run tests and keep the docs current. A human approves before anything ships.", "photo": "", "icon": "robot" }
+      {
+        "name": "Mayank Kariya",
+        "role": "Founder",
+        "bio": "",
+        "photo": "",
+        "icon": ""
+      },
+      {
+        "name": "Kushal Nahata",
+        "role": "founder",
+        "bio": "",
+        "photo": "",
+        "icon": ""
+      },
+      {
+        "name": "The AI team",
+        "role": "Always on",
+        "bio": "Agents that draft specs, run tests and keep the docs current. A human approves before anything ships.",
+        "photo": "",
+        "icon": "robot"
+      }
     ]
   },
   "build": {
     "subtitle": "Deep, not wide",
     "headline": "Four rules every product follows.",
     "rules": [
-      { "icon": "arrow-line-down", "title": "One niche, all the way down", "text": "We would rather solve one industry's whole workflow than ten industries' first screen." },
-      { "icon": "map-pin", "title": "India first", "text": "GST, RBI directions, the DPDP Act, Hinglish and WhatsApp are part of the design, not add-ons." },
-      { "icon": "git-branch", "title": "Open-source foundations", "text": "Frappe and ERPNext underneath, so your data and your system stay yours." },
-      { "icon": "book-open-text", "title": "Docs ship with the code", "text": "Our products come with playbooks for admins, users and testers." }
+      {
+        "icon": "arrow-line-down",
+        "title": "One niche, all the way down",
+        "text": "We would rather solve one industry's whole workflow than ten industries' first screen."
+      },
+      {
+        "icon": "map-pin",
+        "title": "India first",
+        "text": "GST, RBI directions, the DPDP Act, Hinglish and WhatsApp are part of the design, not add-ons."
+      },
+      {
+        "icon": "git-branch",
+        "title": "Open-source foundations",
+        "text": "Frappe and ERPNext underneath, so your data and your system stay yours."
+      },
+      {
+        "icon": "book-open-text",
+        "title": "Docs ship with the code",
+        "text": "Our products come with playbooks for admins, users and testers."
+      }
     ]
   },
   "contact": {
