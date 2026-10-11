@@ -43,7 +43,8 @@
     if (!id) return '';
     const o = orientationOf(v);
     return `<button class="vcard ${o}" data-video="${esc(kind)}" aria-label="Play video${v.title ? `: ${esc(v.title)}` : ''}">
-      <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy">
+      <img src="https://i.ytimg.com/vi/${id}/maxresdefault.jpg" alt="" loading="lazy"
+        onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${id}/hqdefault.jpg'">
       <span class="play"><i class="ph-fill ph-play"></i></span>
       <span class="vt"><small>Watch</small>${esc(v.title || '')}</span>
       <span class="vframe"></span>
@@ -193,13 +194,6 @@
     };
   }
 
-  function renderReach(){
-    const r = reach();
-    const call = $('#callBtn'), wa = $('#waBtn');
-    call.hidden = !r.tel; if (r.tel) call.href = r.tel;
-    wa.hidden = !r.wa; if (r.wa) wa.href = r.wa;
-  }
-
   /* ---------- Render everything from content ---------- */
   function renderAll(){
     stopVideo(true);
@@ -209,7 +203,6 @@
     $('#badge').textContent = apps.length;
     $('#badge').setAttribute('aria-label', `${apps.length} apps`);
     $('#widgetLine').textContent = C.site?.widgetLine || '';
-    renderReach();
     if (!current) $('#hintText').textContent = C.site?.hint || 'Tap an app to look inside';
     setupTicker(C.site?.tickerWords);
 

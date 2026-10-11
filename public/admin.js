@@ -507,7 +507,7 @@
   }
 
   function renderContact(root){
-    root.append(...head('Contact', 'The Contact screen in the dock, and the WhatsApp and Call buttons at the top of the site.'),
+    root.append(...head('Contact', 'The Contact screen in the dock: its Call, WhatsApp, Mail and Map buttons use these details.'),
       card('Details', 'address-book', [
         { key:'email', label:'Email', inputType:'email' },
         { key:'phone', label:'Phone', inputType:'tel', help:'Used by the Call buttons.' },
