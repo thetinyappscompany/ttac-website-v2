@@ -117,7 +117,7 @@ td.amt{white-space:nowrap;font-weight:700}
 .card p + p{margin-top:.3rem}
 .card .sub{font-weight:400;font-size:.88rem;color:var(--muted)}
 
-/* Footer, shared with the home page (styles.css has the home copy) */
+/* Footer: links between these pages */
 .site-foot{
   border-top:1px solid var(--hair); padding:20px clamp(16px,3.2vw,48px) 28px;
   display:flex; flex-wrap:wrap; gap:10px 24px; align-items:center; justify-content:space-between;

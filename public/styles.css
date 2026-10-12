@@ -44,7 +44,7 @@ img{display:block;max-width:100%}
 .stage{
   position:relative; height:100dvh; min-height:600px;
   display:grid; grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
-  grid-template-rows:64px 1fr auto; overflow:clip;
+  grid-template-rows:64px 1fr; overflow:clip;
   isolation:isolate;
 }
 .glow{
@@ -107,16 +107,6 @@ h1 .line{display:block}
 .hint i{font-size:18px;color:var(--accent-ink)}
 .hint .arr{transition:transform .3s var(--ease-out)}
 .hint b{font-weight:500;color:var(--accent-ink)}
-
-/* Footer: company and policy pages (pages.css styles the same footer on those pages) */
-.site-foot{
-  grid-column:1; grid-row:3; z-index:3; display:flex; flex-direction:column; gap:6px;
-  padding:0 clamp(16px,3.2vw,48px) 22px clamp(16px,6vw,104px);
-  font-size:.8rem; color:var(--muted);
-}
-.site-foot nav{display:flex;flex-wrap:wrap;gap:4px 16px}
-.site-foot a{text-decoration:none}
-.site-foot a:hover{color:var(--ink);text-decoration:underline}
 
 /* ---------- Phone ---------- */
 .phone-col{
@@ -438,7 +428,6 @@ body.video-on .home-bar{display:none}
   .glow{top:auto;bottom:0;right:-20vw;width:120vw;height:70vh}
   :root{--ph:min(86dvh, 820px, calc((100vw - 44px) / .485))}
   .hint .arr{transform:rotate(90deg)}
-  .site-foot{padding:40px 16px 0}
 }
 
 /* frosted status bar once an app screen scrolls past its coloured header */
@@ -454,6 +443,6 @@ body.video-on .screen.scrolled .status{background:none;box-shadow:none}
 /* ---------- Phone only (/?phone=1): the admin panel's preview ---------- */
 :root.phone-only{--ph:min(calc(100dvh - 56px), calc((100vw - 76px) / .485), 860px)}
 .phone-only body{overflow:hidden;background:transparent}
-.phone-only .top,.phone-only .hero,.phone-only .glow,.phone-only .site-foot{display:none}
+.phone-only .top,.phone-only .hero,.phone-only .glow{display:none}
 .phone-only .stage{display:grid;grid-template-columns:1fr;grid-template-rows:1fr;height:100dvh;min-height:0;padding:0}
 .phone-only .phone-col{grid-column:1;grid-row:1;padding:28px 34px 28px 30px;perspective:none}
