@@ -1,0 +1,128 @@
+/* The Tiny Apps Company: plain text pages (pricing, policies, contact). Tokens match styles.css. */
+:root{
+  --bg:#F5F1E9; --bg-2:#EAE4D6; --card:#fffdf8; --ink:#141414; --muted:#5f5a50;
+  --accent:#008080; --accent-ink:#006060; --mint:#98FF98;
+  --hair:rgba(20,20,20,.12);
+  --todo-bg:#fff1b8; --todo-ink:#5a4300;
+  --font-sans:'Public Sans',system-ui,-apple-system,sans-serif;
+  --font-mono:'JetBrains Mono','SF Mono',Consolas,monospace;
+  --ease-out:cubic-bezier(.2,.9,.22,1);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c0c0c; --bg-2:#171717; --card:#141414; --ink:#f0ead7; --muted:#9a9485;
+    --accent:#98FF98; --accent-ink:#98FF98; --hair:rgba(255,255,255,.1);
+    --todo-bg:#3d3200; --todo-ink:#ffe27a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c0c0c; --bg-2:#171717; --card:#141414; --ink:#f0ead7; --muted:#9a9485;
+  --accent:#98FF98; --accent-ink:#98FF98; --hair:rgba(255,255,255,.1);
+  --todo-bg:#3d3200; --todo-ink:#ffe27a;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--ink); min-height:100dvh;
+  font-family:var(--font-sans); -webkit-font-smoothing:antialiased; line-height:1.6;
+  display:flex; flex-direction:column;
+}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:var(--accent-ink);text-underline-offset:.18em}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* Header, same as the home page */
+.top{
+  height:64px; display:flex; align-items:center; justify-content:space-between;
+  padding:0 clamp(16px,3.2vw,48px);
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand img{width:34px;height:34px}
+.brand-name{font-size:.95rem;letter-spacing:.04em;text-transform:uppercase;font-weight:500;line-height:1.05}
+.brand-name b{font-weight:800}
+:root[data-theme="dark"] .brand img{filter:invert(1)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .brand img{filter:invert(1)}}
+.theme-btn{
+  width:40px;height:40px;border-radius:999px;display:grid;place-items:center;
+  border:1px solid var(--hair); font-size:18px; transition:transform .2s var(--ease-out), background .2s;
+}
+.theme-btn:hover{background:var(--bg-2)}
+.theme-btn:active{transform:scale(.94)}
+
+/* Page body */
+.doc{flex:1; width:100%; max-width:46rem; margin:0 auto; padding:clamp(28px,6vh,64px) 16px 64px}
+.doc.wide{max-width:68rem}
+.kicker{font-family:var(--font-mono);font-size:.78rem;color:var(--accent-ink);letter-spacing:.02em}
+.doc h1{
+  font-weight:800; letter-spacing:-.04em; line-height:1.05; margin-top:.35em;
+  font-size:clamp(2.2rem,6vw,3.6rem); text-wrap:balance;
+}
+.lede{font-size:1.08rem;color:var(--muted);margin-top:1rem;max-width:40rem}
+.meta{font-family:var(--font-mono);font-size:.78rem;color:var(--muted);margin-top:1.2rem}
+.doc h2{font-size:1.3rem;letter-spacing:-.025em;line-height:1.2;margin:2.4rem 0 .6rem}
+.doc h3{font-size:1.02rem;letter-spacing:-.01em;margin:1.4rem 0 .35rem}
+.doc p, .doc li{max-width:42rem}
+.doc p + p{margin-top:.8rem}
+.doc ul, .doc ol{padding-left:1.25rem;margin:.6rem 0}
+.doc li + li{margin-top:.35rem}
+.doc strong{font-weight:700}
+.note{
+  margin-top:1.4rem; padding:1rem 1.1rem; border-radius:14px; border:1px solid var(--hair);
+  background:var(--card); font-size:.95rem;
+}
+
+/* Owner placeholders: deliberately loud so none ships unnoticed */
+.todo{
+  background:var(--todo-bg); color:var(--todo-ink); font-family:var(--font-mono); font-size:.86em;
+  padding:.1em .4em; border-radius:6px; box-decoration-break:clone; -webkit-box-decoration-break:clone;
+}
+
+/* Pricing */
+.product{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--hair)}
+.product-head{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.product-head img{width:52px;height:52px;border-radius:22.5%;box-shadow:0 4px 12px rgba(0,0,0,.18)}
+.product-head h2{margin:0}
+.product-head p{color:var(--muted);font-size:.95rem;margin:0}
+.product .intro{margin-top:1rem}
+.product-head .site{margin-left:auto;font-weight:700;font-size:.92rem}
+.plans{display:grid;grid-template-columns:repeat(auto-fill,minmax(14.5rem,1fr));gap:12px;margin-top:1.2rem}
+.plan{
+  background:var(--card); border:1px solid var(--hair); border-radius:18px; padding:1.1rem 1.15rem 1.2rem;
+  display:flex; flex-direction:column;
+}
+.plan h3{margin:0;font-size:1rem}
+.price{font-size:1.75rem;font-weight:800;letter-spacing:-.035em;line-height:1.1;margin-top:.5rem}
+.price small{font-size:.8rem;font-weight:500;letter-spacing:0;color:var(--muted)}
+.plan .alt{font-size:.85rem;color:var(--muted);margin-top:.15rem}
+.plan ul{list-style:none;padding:0;margin:.8rem 0 0;font-size:.9rem}
+.plan li{padding-left:1.1rem;position:relative}
+.plan li::before{content:"";position:absolute;left:0;top:.62em;width:.42rem;height:.42rem;border-radius:50%;background:var(--accent)}
+.table-wrap{overflow-x:auto;margin-top:1rem;border:1px solid var(--hair);border-radius:14px;background:var(--card)}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;padding:.6rem .9rem;vertical-align:top}
+th{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700}
+tr + tr td, tbody tr td{border-top:1px solid var(--hair)}
+td.amt{white-space:nowrap;font-weight:700}
+
+/* Contact */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:12px;margin-top:2rem}
+.card{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:1.1rem 1.15rem}
+.card i{font-size:22px;color:var(--accent-ink)}
+.card h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:.5rem 0 .25rem}
+.card p{font-size:1rem;font-weight:600;overflow-wrap:anywhere}
+.card p + p{margin-top:.3rem}
+.card .sub{font-weight:400;font-size:.88rem;color:var(--muted)}
+
+/* Footer, shared with the home page (styles.css has the home copy) */
+.site-foot{
+  border-top:1px solid var(--hair); padding:20px clamp(16px,3.2vw,48px) 28px;
+  display:flex; flex-wrap:wrap; gap:10px 24px; align-items:center; justify-content:space-between;
+  font-size:.84rem; color:var(--muted);
+}
+.site-foot nav{display:flex;flex-wrap:wrap;gap:6px 18px}
+.site-foot a{color:inherit;text-decoration:none}
+.site-foot a:hover,.site-foot a[aria-current="page"]{color:var(--ink);text-decoration:underline}
