@@ -453,7 +453,7 @@
         "orientation": "auto",
         "title": ""
       },
-      "hidden": false
+      "hidden": true
     }
   ],
   "about": {
@@ -465,7 +465,7 @@
     ],
     "tiles": [
       {
-        "value": "5 products",
+        "value": "3 products",
         "label": "and counting"
       },
       {
@@ -491,22 +491,15 @@
         "name": "Mayank Kariya",
         "role": "Founder",
         "bio": "",
-        "photo": "",
+        "photo": "/uploads/mv5561fy-mayank-kariya-hero.webp",
         "icon": ""
       },
       {
         "name": "Kushal Nahata",
-        "role": "founder",
+        "role": "Founder",
         "bio": "",
         "photo": "",
         "icon": ""
-      },
-      {
-        "name": "The AI team",
-        "role": "Always on",
-        "bio": "Agents that draft specs, run tests and keep the docs current. A human approves before anything ships.",
-        "photo": "",
-        "icon": "robot"
       }
     ]
   },
