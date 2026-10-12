@@ -17,7 +17,7 @@ No database and no Vercel storage are used. Every change is in the git history, 
 |---|---|
 | `public/index.html`, `styles.css`, `app.js` | The site. `app.js` draws the phone, its apps and dock screens from `content.json` |
 | `public/content.json` | All site content. The admin panel edits this file |
-| `public/pricing.html`, `terms.html`, `privacy.html`, `refund-policy.html`, `shipping-policy.html`, `contact-us.html` | Products & pricing, policy and contact pages (needed for Razorpay), linked from the footer. Plain HTML styled by `pages.css`; edit them in the repo, not in /admin. Prices come from TTAC HQ's seeds and each product's repo |
+| `public/pricing.html`, `terms.html`, `privacy.html`, `refund-policy.html`, `shipping-policy.html`, `contact-us.html` | Products & pricing, policy and contact pages (needed for Razorpay). Not linked from the home page; each links to the others in its footer. Plain HTML styled by `pages.css`; edit them in the repo, not in /admin. Prices come from TTAC HQ's seeds and each product's repo |
 | `public/admin.html`, `admin.css`, `admin.js` | The admin panel: edit, preview, publish |
 | `public/assets/` | TTAC logo, app icons, share image |
 | `api/content.js` | `GET`: the content, live from GitHub. `PUT`: publish (admin only) |
