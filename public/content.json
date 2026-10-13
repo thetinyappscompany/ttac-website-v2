@@ -460,7 +460,7 @@
     "subtitle": "The Tiny Apps Company",
     "headline": "We pick one narrow problem and go all the way down.",
     "paragraphs": [
-      "A coworking operator's whole member lifecycle. An NBFC's gold-loan rulebook. An ERPNext rollout, planned before a single setting is touched.",
+      "A coworking operator's whole member lifecycle. An ERPNext rollout, planned before a single setting is touched.",
       "Each product is small enough to fit one icon, and deep enough that the people using it every day stop needing a second tool."
     ],
     "tiles": [
@@ -515,7 +515,7 @@
       {
         "icon": "map-pin",
         "title": "India first",
-        "text": "GST, RBI directions, the DPDP Act, Hinglish and WhatsApp are part of the design, not add-ons."
+        "text": "GST, the DPDP Act, Hinglish and WhatsApp are part of the design, not add-ons."
       },
       {
         "icon": "git-branch",
