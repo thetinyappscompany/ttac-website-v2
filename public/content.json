@@ -194,8 +194,8 @@
       "id": "traitatlas",
       "name": "TraitAtlas",
       "category": "Personality and careers",
-      "tagline": "Honest tests, not a horoscope.",
-      "description": "Eight short tests on personality, career interests, values, work style and wellbeing. Every report is in plain language, with a character from everyday Indian life.",
+      "tagline": "Understand yourself. Grow with it.",
+      "description": "Seven short, honest tests on personality, career interests, values, work style and wellbeing. Meet your character from everyday Indian life before you pay, then unlock a plain-language report and an AI-written Atlas Profile that reads all your results together.",
       "icon": "/assets/traitatlas.png",
       "glyph": "",
       "colorFrom": "#13112e",
@@ -207,77 +207,82 @@
       "facts": [
         {
           "label": "Tests",
-          "value": "8"
+          "value": "7"
         },
         {
           "label": "Time",
-          "value": "4 to 12 min"
+          "value": "3 to 15 min"
         },
         {
-          "label": "Price",
-          "value": "₹99 a report"
+          "label": "Reports",
+          "value": "₹99 each"
         },
         {
-          "label": "Languages",
-          "value": "EN + Hinglish"
+          "label": "Team seat",
+          "value": "₹299"
         }
       ],
       "highlights": [
         {
           "icon": "flask",
-          "title": "Research, not horoscopes",
-          "text": "Built on published instruments, with scoring you can explain."
+          "title": "Honest, not a horoscope",
+          "text": "Published research instruments where we use them, and scoring you can explain."
         },
         {
           "icon": "user-circle",
           "title": "Characters you know",
-          "text": "Results come as characters from everyday Indian life."
+          "text": "The Rangoli Architect, The Banyan Tree, The Sangeet Starter and more."
         },
         {
-          "icon": "whatsapp-logo",
-          "title": "Made to share",
-          "text": "A 9:16 card for WhatsApp, and compare-with-a-friend."
+          "icon": "compass",
+          "title": "One atlas of you",
+          "text": "An AI-written Atlas Profile reads every report together. AI never changes a score."
         }
       ],
       "groups": [
         {
           "title": "The tests",
           "items": [
-            "8 tests, 4 to 12 minutes each",
-            "Published research instruments",
-            "Explainable, versioned scoring",
-            "English and Hinglish"
+            "Four Styles",
+            "Big Five Personality",
+            "16 Personality Types",
+            "Career Interest Explorer",
+            "Values & Motivation",
+            "Work Style & Preferences",
+            "Wellbeing Check-in"
           ]
         },
         {
           "title": "The reports",
           "items": [
-            "Characters like The Monsoon Express",
-            "AI Atlas Profile across reports",
-            "AI never changes a score",
-            "PDF report",
-            "₹99 per report, no subscription"
+            "Your character before you pay",
+            "Every score in plain words",
+            "Three next steps and a 30-day plan",
+            "A PDF to keep",
+            "₹99 a report, packs from ₹249",
+            "One-time payments, no subscription"
           ]
         },
         {
           "title": "Share and teams",
           "items": [
-            "9:16 WhatsApp share card",
+            "9:16 share card for WhatsApp",
             "Compare with a friend",
-            "Team rounds with consent",
-            "Team insights, small groups hidden"
+            "Organisation Plan, 5 to 200 people",
+            "Rounds with a consent notice",
+            "Small groups hidden from managers"
           ]
         }
       ],
       "stack": "Frappe v16, React, Vite, Tailwind",
-      "websiteUrl": "",
-      "websiteLabel": "",
+      "websiteUrl": "https://traitatlas.in",
+      "websiteLabel": "traitatlas.in",
       "video": {
         "url": "",
         "orientation": "auto",
         "title": ""
       },
-      "hidden": true
+      "hidden": false
     },
     {
       "id": "presspilot",
@@ -460,12 +465,12 @@
     "subtitle": "The Tiny Apps Company",
     "headline": "We pick one narrow problem and go all the way down.",
     "paragraphs": [
-      "A coworking operator's whole member lifecycle. An ERPNext rollout, planned before a single setting is touched.",
+      "A coworking operator's whole member lifecycle. An ERPNext rollout, planned before a single setting is touched. Seven honest tests that add up to one atlas of you.",
       "Each product is small enough to fit one icon, and deep enough that the people using it every day stop needing a second tool."
     ],
     "tiles": [
       {
-        "value": "3 products",
+        "value": "4 products",
         "label": "and counting"
       },
       {
