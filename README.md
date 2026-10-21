@@ -19,6 +19,7 @@ No database and no Vercel storage are used. Every change is in the git history, 
 | `public/content.json` | All site content. The admin panel edits this file |
 | `public/pricing.html`, `terms.html`, `privacy.html`, `refund-policy.html`, `shipping-policy.html`, `contact-us.html` | Products & pricing, policy and contact pages (needed for Razorpay), linked from the footer on the home page and on each page. Plain HTML styled by `pages.css`; edit them in the repo, not in /admin. Prices come from TTAC HQ's seeds and each product's repo |
 | `public/admin.html`, `admin.css`, `admin.js` | The admin panel: edit, preview, publish |
+| `public/analytics.js` | Microsoft Clarity events for every public page (see Analytics below) |
 | `public/assets/` | TTAC logo, app icons, share image |
 | `api/content.js` | `GET`: the content, live from GitHub. `PUT`: publish (admin only) |
 | `api/image.js` | Serves images uploaded in /admin from GitHub until the next deploy includes them |
@@ -61,6 +62,34 @@ Images must be 2 MB or smaller, because they are stored in the repository. Squar
 
 Paste any YouTube link: `watch?v=`, `youtu.be/`, or `/shorts/`. Shorts count as vertical; you can override the shape per video.
 With zoom on, tapping a video makes the phone grow to fill the screen. It turns sideways for horizontal videos, and goes back when the video ends or the viewer presses × or Esc. With zoom off, the video plays inside its card.
+
+## Analytics (Microsoft Clarity)
+
+Clarity (project `z157whan2a`) runs on every public page. It does not run on `/admin` or in the admin's live preview (`/?preview=1`), so your own editing is never recorded.
+
+On its own, Clarity sees the home page as one page, because apps open inside the phone. So the site also sends Clarity the custom events and tags below. They contain only page, screen and app names: no names, numbers or anything a visitor types. In Clarity, filter recordings and heatmaps with **Filters > Custom events** and **Filters > Custom tags**.
+
+**Events**
+
+| Event | When it fires | Tags it sets |
+|---|---|---|
+| `app_open` | An app opens on the phone (icon tap, link, or Back) | `screen`, `app` |
+| `dock_open` | About, Team, How we build or Contact opens | `screen`, `dock_screen` |
+| `deep_link` | Someone lands on a shared app link, like `/#spacepartner` | `landing_screen` |
+| `video_play` | A video starts | `video` (which app, or `about`), `video_mode` (`zoom` or `inline`), `video_shape` (`landscape` or `portrait`) |
+| `video_complete` | A video plays to the end | `video_watch_time` |
+| `video_closed` | A video is closed early (×, Esc, tap outside, or leaving the screen) | `video_watch_time` (`under 10s`, `10-30s`, `30-60s`, `1-3 min`, `over 3 min`) |
+| `demo_request` | "Request a demo" is tapped on an app without a website | `demo_app` |
+| `app_website_visit` | An app's "Visit" button is tapped | `website_app`, `outbound_site` |
+| `contact_whatsapp`, `contact_call`, `contact_email`, `contact_map` | A WhatsApp, phone, email or map link is tapped, on any page | `click_place` (the screen or page it was on) |
+| `outbound_click` | Any link to another website is tapped | `outbound_site`, `click_place` |
+| `theme_toggle` | Light or dark mode is switched | `theme` |
+
+Every page also sets the `page` tag (`home`, `pricing`, `privacy`, and so on).
+
+Sessions with `video_play`, `demo_request` or any `contact_*` event are always kept in full, so the recordings of interested visitors are never sampled away.
+
+The code is in `public/analytics.js` (links on every page) and the `track()` calls in `public/app.js` (the phone). The privacy policy (section 2) says the site uses Clarity; keep it accurate if this changes.
 
 ## Notes
 

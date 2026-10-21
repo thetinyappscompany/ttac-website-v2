@@ -24,6 +24,22 @@
   const glyph = (name) => String(name || '').replace(/[^a-z0-9-]/gi, '');
   const visibleApps = () => (C.apps || []).filter((a) => !a.hidden);
 
+  /* ---------- Clarity: what visitors do inside the phone (no personal data) ---------- */
+  // window.clarity exists only on the live site, not in the admin preview. Calls made before
+  // Clarity finishes loading are queued by its loader. keep = always save this session's recording.
+  function track(event, tags = {}, keep = false){
+    if (typeof window.clarity !== 'function') return;
+    try {
+      for (const [k, v] of Object.entries(tags)) window.clarity('set', k, String(v));
+      if (event) window.clarity('event', event);
+      if (event && keep) window.clarity('upgrade', event);
+    } catch {}
+  }
+  const watchTime = (ms) => {
+    const s = ms / 1000;
+    return s < 10 ? 'under 10s' : s < 30 ? '10-30s' : s < 60 ? '30-60s' : s < 180 ? '1-3 min' : 'over 3 min';
+  };
+
   /* ---------- YouTube helpers ---------- */
   function youTubeId(url){
     try {
@@ -263,6 +279,8 @@
     screen.classList.remove('scrolled');
     current = id;
     describe(id);
+    if (pages.get(id).dataset.kind === 'app') track('app_open', { screen: id, app: id });
+    else track('dock_open', { screen: id, dock_screen: id });
     if (focus) pages.get(id).querySelector('[data-home]').focus({ preventScroll:true });
   }
 
@@ -335,7 +353,14 @@
     const vid = e.target.closest('[data-video]');
     if (vid){ e.preventDefault(); playVideo(vid); return; }
     const route = e.target.closest('a[data-route]');
-    if (route){ e.preventDefault(); go(route.dataset.route); return; }
+    if (route){
+      e.preventDefault();
+      // "Request a demo" on an app's own screen (apps without a website link to Contact)
+      const fromApp = route.closest('[data-page][data-kind="app"]');
+      if (fromApp && route.dataset.route === 'contact') track('demo_request', { demo_app: fromApp.dataset.page }, true);
+      go(route.dataset.route);
+      return;
+    }
     if (e.target.closest('[data-home]')){ e.preventDefault(); goHome(); }
   });
   document.addEventListener('keydown', (e) => {
@@ -355,6 +380,7 @@
 
   /* ---------- Video ---------- */
   let ytLoading = null, player = null, layer = null, inlineCard = null;
+  let watching = null;   // { started } while a video is open, for the watch-time tag
 
   function loadYouTube(){
     if (window.YT && window.YT.Player) return Promise.resolve(window.YT);
@@ -382,7 +408,7 @@
       playerVars: { autoplay:1, playsinline:1, rel:0, modestbranding:1 },
       events: {
         onReady: (e) => e.target.playVideo(),
-        onStateChange: (e) => { if (e.data === YT.PlayerState.ENDED) stopVideo(); },
+        onStateChange: (e) => { if (e.data === YT.PlayerState.ENDED) stopVideo(false, 'ended'); },
       },
     });
   }
@@ -406,6 +432,8 @@
     if (!id) return;
     stopVideo(true);
     const orientation = orientationOf(v);
+    watching = { started: Date.now() };
+    track('video_play', { video: card.dataset.video, video_mode: C.site?.videoZoom ? 'zoom' : 'inline', video_shape: orientation }, true);
 
     if (!C.site?.videoZoom){
       // zoom switched off in the admin panel: play inside the card
@@ -436,7 +464,12 @@
     catch { stopVideo(); }
   }
 
-  function stopVideo(instant = false){
+  function stopVideo(instant = false, reason = ''){
+    if (watching){
+      // finished = played to the end; closed = × / Esc / tap outside / left the screen
+      track(reason === 'ended' ? 'video_complete' : 'video_closed', { video_watch_time: watchTime(Date.now() - watching.started) });
+      watching = null;
+    }
     try { player && player.destroy(); } catch {}
     player = null;
     if (inlineCard){
@@ -537,6 +570,7 @@
     const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
     root.dataset.theme = dark ? 'light' : 'dark';
     try { localStorage.setItem('ttac-theme', root.dataset.theme); } catch {}
+    track('theme_toggle', { theme: root.dataset.theme });
   });
 
   /* ---------- Admin live preview: the admin panel posts unsaved content here ---------- */
@@ -572,7 +606,11 @@
       renderAll();
       if (isPreview) parent.postMessage({ type:'ttac:ready' }, location.origin);
       const initial = routeFromHash();
-      if (initial && pages.has(initial)) setTimeout(() => render(initial), reduce || isPreview ? 0 : 900);
+      if (initial && pages.has(initial)){
+        // arrived through an app's own link, e.g. a shared /#spacepartner
+        track('deep_link', { landing_screen: initial });
+        setTimeout(() => render(initial), reduce || isPreview ? 0 : 900);
+      }
     })
     .catch(() => {
       $('#grid').innerHTML = '<p class="empty" style="grid-column:1/-1">Our apps did not load. Please refresh the page.</p>';
